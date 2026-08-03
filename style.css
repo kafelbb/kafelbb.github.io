@@ -326,24 +326,22 @@ h3{
         width: 100%;
         height: auto;
         min-height: 100vh;
-        position: absolute; /* Пока держим абсолют для планшетов */
+        position: absolute;
     }
 }
 
 @media (max-width: 700px), (max-height: 800px) {
-    /* 1. Освобождаем body и разрешаем странице скроллиться вниз */
     html, body {
         height: auto !important;
         overflow-y: auto !important;
     }
 
     body {
-        display: block !important; /* Убираем центрирование flex, чтобы страница шла сверху вниз */
+        display: block !important;
     }
 
-    /* 2. Ломаем абсолютную тюрьму главного контейнера */
     .dark_gray_thing {
-        position: relative !important; /* Превращаем в обычный блок, который может расти вниз */
+        position: relative !important;
         left: unset !important;
         right: unset !important;
         top: unset !important;
@@ -356,9 +354,8 @@ h3{
         justify-content: center;
     }
 
-    /* 3. Освобождаем внутренний контейнер */
     .thing {
-        position: relative !important; /* Убираем абсолют */
+        position: relative !important;
         left: unset !important;
         right: unset !important;
         top: unset !important;
@@ -366,17 +363,15 @@ h3{
         width: 100% !important;
         height: auto !important;
         max-width: 1100px;
-        gap: 3rem !important; /* Немного уменьшаем отступы на мобилке */
+        gap: 3rem !important;
     }
 
-    /* 4. Разворачиваем две главные колонки в одну */
     .thing2 {
         flex-direction: column !important;
         height: auto !important;
         gap: 3rem !important;
     }
 
-    /* Левая колонка (hobbies + favs) */
     .thing367 {
         width: 100% !important;
         height: auto !important;
@@ -384,7 +379,6 @@ h3{
         flex: none !important;
     }
 
-    /* Правая колонка (skills + ссылки) */
     .thing3 {
         width: 100% !important;
         height: auto !important;
@@ -392,7 +386,6 @@ h3{
         flex: none !important;
     }
 
-    /* 5. Сбрасываем жесткую высоту окон и разрешаем им растягиваться */
     .window, .window2 {
         height: auto !important;
         min-height: min-content !important;
@@ -403,21 +396,17 @@ h3{
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
-    /* Разворачиваем подложки в вертикальный ряд */
     .black {
         height: auto !important;
         flex-direction: row !important;
         gap: 1rem !important;
     }
 
-    /* Исправляем карточку hobbies, чтобы вернулись кот и текст */
     .about {
         height: auto !important;
-        flex-direction: row-reverse !important; /* Возвращаем десктопное расположение */
+        flex-direction: row-reverse !important;
         width: 100% !important;
     }
-
-    /* 6. Перестраиваем сетку навыков в одну аккуратную колонку */
     .skills {
         display: flex !important;
         flex-direction: column !important;
