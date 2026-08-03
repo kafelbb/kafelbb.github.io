@@ -417,8 +417,9 @@ a{
     }
 
     .dl {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        font-size: 1.1rem;
     }
     .black {
         height: auto !important;
