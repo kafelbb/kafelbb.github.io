@@ -1,270 +1,114 @@
-﻿<!DOCTYPE html>
+﻿<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kafel's own corner'</title>
+    <title>kafel's own corner</title>
 
-    <style>
-        @font-face {
-            font-family: "fixed-mont";
-            src: url("montserrat-sb.ttf") format('truetype');
-            font-style: normal;
-            font-weight: 600;
-        }
-        @font-face {
-            font-family: "fixed-mont-m";
-            src: url("montserrat-m.ttf") format('truetype');
-            font-style: normal;
-            font-weight: 600;
-        }
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: fixed;
-        }
-        body {
-            font-family: fixed-mont;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .gray_rect {
-            max-width: 800px;
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 3rem;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
-            box-sizing: border-box;
-            gap: 2rem;
-            font-size: clamp(11pt, 2.2vw, 12pt);
-        }
-        .bar_rect {
-            width: 100%;
-            height: 10%;
-            background: #ffffff;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(171, 171, 171, 1) 100%);
-            border-radius: 1.5rem;
-            z-index: 2;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 2rem;
-            align-items: center;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 8px rgba(0,0,0,0.25);
-        }
-        .ava {
-            position: relative;
-            place-self: self-end;
-            width: 32%;
-            height: 32%;
-            background: #ffffff;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(171, 171, 171, 1) 100%);
-            border-radius: 1.5rem;
-            z-index: 2;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 1rem;
-            align-items: center;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 8px rgba(0,0,0,0.25);
-            object-fit: cover;
-            overflow: hidden;
-        }
-        .avabg {
-            background-image: url("uhh.png");
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: end;
-            justify-content: center;
-            object-fit: cover;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        .ass {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 85%;
-            gap: 2rem;
-            align-items: stretch;
-        }
-        img {
-            width: 100%;
-            aspect-ratio: 1;
-            overflow: hidden;
-            place-self: end;
-        }
-        .img2 {
-            height: 60%;
-            width: 100%;
-            border-radius: 1rem;
-        }
-        .descbox {
-            background: #ffffff;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(171, 171, 171, 1) 100%);
-            position: relative;
-            z-index: 4;
-            border-radius: 1.5rem;
-            padding: 1rem;
-            width: 100%;
-        }
-        .desc2 {
-            grid-area: 3 / 1 / 4 / 2;
-        }
-        .links {
-            grid-area: 4 / 1 / 5 / 3;
-        }
-        header {
-            color: black;
-            font-family: fixed-mont;
-            font-size: 16pt;
-            font-size: clamp(16pt, 2.2vw, 18pt);
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.15);
-        }
-        a {
-            color: black;
-            font-family: fixed-mont-m;
-            font-size: clamp(14pt, 2vw, 16pt);
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.15);
-            text-decoration: none;
-        }
-        a:hover {
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.35);
-        }
-        .a2 {
-            color: purple;
-            font-size: clamp(10pt, 2.2vw, 12pt);
-            text-shadow: 0px 0px 8px rgba(255,255,255,0.25);
-        }
-            .a2:hover {
-                
-                text-shadow: 0px 0px 8px rgba(0,0,0,0.25);
-            }
-        .wrapper {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            transform: rotate(12deg);
-            overflow: hidden;
-            z-index:-1;
-        }
-        .sociallink {
-            width: 5%;
-            border-radius: 5px;
-            aspect-ratio: 1;
-            padding-inline: 3px;
-        }
-        .checkerboard {
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(45deg, #5c5c5c 25%, transparent 25%), linear-gradient(-45deg, #5c5c5c 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #5c5c5c 75%), linear-gradient(-45deg, transparent 75%, #5c5c5c 75%);
-            background-size: 120px 120px;
-            background-position: 0 0, 0 60px, 60px -60px, -60px 0px;
-            background-color: #3d3d3d;
-
-            animation: scroll 6s linear infinite;
-            position: relative;
-        }
-            .checkerboard::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.22) 0%, rgba(0,0,0,0.45) 85%);
-                pointer-events: none;
-            }
-        @keyframes scroll {
-            0% {
-                background-position: 0px 0px, 0px 60px, 60px -60px, -60px 0px;
-            }
-
-            100% {
-                background-position: 120px 120px, 120px 180px, 180px 60px, 60px 120px;
-            }
-        }
-        @media (max-width: 700px){
-            @media (max-width: 700px) {
-                html, body {
-                    overflow-x: hidden;
-                    overflow-y: auto;
-                }
-
-                .gray_rect {
-                    height: contain;
-                    width: 90%;
-                    position: absolute;
-                    top: 2.5%;
-                }
-
-                .ava {
-                    display: none;
-                }
-            }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css" >
+</head >
 <body>
-    <div class="wrapper">
-        <div class="checkerboard"></div>
-    </div>
-    <div class="gray_rect">
-        <div class="bar_rect">
-            <header>kafel</header>
-            <a href="works.html">works</a>
+    <div class="wrapper2">
+        <div class="wrapper">
+            <div class="checkerboard"></div>
         </div>
-        <div class="ass">
-            <div class="ava">
-                <div class="avabg">
-                    <img src="uhh2.png" />
+    </div>
+
+    <div class="dark_gray_thing" id="67">
+        <div class="thing">
+            <div class="bar">
+                <header>kafel</header>
+                <div class="poo">
+                    <img class="icon" src="images/icon.png" />
                 </div>
             </div>
-            <div class="descbox">
-                hello, I am a young guy interested in microelectronics, soldering, gamedev, C++ development and design.
-                <br />
-                <br />my fav music genres are atmospheric/intelligent dnb, Sonic CD-type, Deltarune OST-like and tracker (demoscene) music.
-                <br />
-                <br />my hobbies are: sodlering, microelectronic engineering, C++ coding, design, building, scripting and UI design in Roblox Studio
-                <br />
-                <br />my fav aesthetics are: industrial hell, neo-industrialism and liminalism
-            </div>
-        </div>
-        <div class="ass">
-            <div class="descbox">
-                my favourite programming langs: python, luaU, C++
-                <br />
-                <br />
-                progs I use in my projects: Arduino IDE, OpenMPT, Visual Studio (2022), Paint.NET (not to be confused with MS Paint), Roblox Studio, Blender, Inkscape, FreeCAD, UltiMaker Cura
-                <br />
-                <br />
-                my favourite games are: Yume 2kki, Yume Nikki, Deltarune, Team Fortess 2, Half-life, Half-life 2, Half-life 2: Episode One, Half-life 2: Episode Two, Half-life: Opposing Force, Half-life: Blue Shift, Black Mesa, The Stanley Parable, Outcore, and, of course Minecraft (And especially Create, the mod)
-            </div>
-            <div class="ava">
-                <img src="a.png" class="img2"/>
-            </div>
-        </div>
-        <div class="ass">
-            <div class="descbox">
-                <a href="https://github.com/kafelbb"><img src="github.png" class="sociallink" /></a>
-                <a href="https://www.tiktok.com/@rosinfluxx"><img src="tiktok.webp" class="sociallink" /></a>
-                <a href="https://www.youtube.com/@kafelbb"><img src="yt.png" class="sociallink" /></a>
+            <div class="thing2">
+                <div class="thing367">
+                    <div class="window">
+                        <header class="window_title">hobbies</header>
+                        <div class="black">
+                            <div class="about">
+                                <h3>gamedev<br />design<br />microelectronic engineering<br />C++ programming<br />soldering</h3>
+                            </div>
+                            <img class="icon2" src="images/kafel.jpg" />
+                        </div>
+                    </div>
+                    <div class="window">
+                        <header class="window_title">favs</header>
+                        <div class="black">
+                            <div class="about">
+                                <h3>
+                                    games:<br />half-life series<br />team fortress 2<br />deltarune<br />the stanley parable<br />yume nikki<br />
+                                    yume 2kki
+                                </h3>
+                            </div>
+                            <div class="about">
+                                <h3>music genres:<br />atmospheric/intelligent dnb<br />soundfont<br />sonic cd type<br />deltarune type
+                                <br />tracker/demoscene</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="thing3">
+                    <div class="window">
+                        <header class="window_title">skills (hobbyist level)</header>
+                        <div class="black b2">
+                            <div class="skills">
+                                <div class="black b3">
+                                    <h3>
+                                        engineering:<br />
+                                        CAD modeling (FreeCAD)<br />
+                                        PCB design (KiCAD, EasyEDA)<br />
+                                        soldering<br />
+                                    </h3>
+                                </div>
+                                <div class="black b3">
+                                    <h3>
+                                        junior coding:<br />
+                                        C++ programming<br />
+                                        scripting in Python and LuaU<br />
+                                        Arduino C++ programming<br />
+                                    </h3>
+                                </div>
+                                <div class="black b3">
+                                    <h3>
+                                        2D:<br />
+                                        texturing (Paint.NET)<br />
+                                        UI design (Inkscape, Paint.NET, Roblox Studio)<br />
+                                        web layout (HTML, CSS)<br />
+                                    </h3>
+                                </div>
+                                <div class="black b3">
+                                    <h3>
+                                        3D:<br />
+                                        map building (Roblox Studio)<br />
+                                        3D modeling (Blender)<br />
+                                    </h3>
+                                </div>
+                                <!--um also I wanted to say that I FUCKING HATE HTML AND CSS
+                                    THIS SHIT IS NOT EVEN NEAR TO BEING CONVENIENT
+                                    FUCKING ROBLOX STUDIO UI SYSTEM IS MORE CONVINIENT THAN THIS BULLSHIT
+                                    WHY DO YOU NEED TO OVERCOMPLICATE A FUCKING BYCYCLE
+                                    JUST MAKE YOUR TOOLS CONVINIENT, HUMANE AND FUCKING SIMPLE
+                                    I kid you not, for me even embedded C++ development is more simpler than
+                                    making this shit work-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="window2">
+                        <div class="black">
+                            <!--<img class="icon3" src="images/kafel.jpg" />-->
+                            <div class="socials">
+                                <a href="https://github.com/kafelbb" class="dl">github</a>
+                                <a href="https://www.tiktok.com/@rosinfluxx" class="dl">tiktok</a>
+                                <a href="https://www.youtube.com/@kafelbb"class="dl yt">youtube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
-</html>
+</html >
