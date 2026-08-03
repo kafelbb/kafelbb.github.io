@@ -21,6 +21,7 @@
                 <header>kafel</header>
                 <div class="poo">
                     <img class="icon" src="images/icon.png" />
+                    <a href="works.html">my works</a>
                 </div>
             </div>
             <div class="thing2">
@@ -44,8 +45,10 @@
                                 </h3>
                             </div>
                             <div class="about">
-                                <h3>music genres:<br />atmospheric/intelligent dnb<br />soundfont<br />sonic cd type<br />deltarune type
-                                <br />tracker/demoscene</h3>
+                                <h3>
+                                    music genres:<br />atmospheric/intelligent dnb<br />soundfont<br />sonic cd type<br />deltarune type
+                                    <br />tracker/demoscene
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -102,7 +105,7 @@
                             <div class="socials">
                                 <a href="https://github.com/kafelbb" class="dl">github</a>
                                 <a href="https://www.tiktok.com/@rosinfluxx" class="dl">tiktok</a>
-                                <a href="https://www.youtube.com/@kafelbb"class="dl yt">youtube</a>
+                                <a href="https://www.youtube.com/@kafelbb" class="dl yt">youtube</a>
                             </div>
                         </div>
                     </div>
@@ -110,5 +113,30 @@
             </div>
         </div>
     </div>
+    <script>
+        function resizeWrapper() {
+            const wrapper = document.querySelector('.wrapper2');
+            const sixseven = document.getElementById('67');
+
+            if (!wrapper || !sixseven) return;
+
+            sixseven.style.height = 'auto';
+            sixseven.style.maxHeight = 'none';
+
+            if (window.innerWidth <= 700 || window.innerHeight <= 800) {
+                const ch = sixseven.scrollHeight;
+                console.log(ch);
+                wrapper.style.height = ch + 'px';
+                wrapper.style.width = "100%";
+            } else {
+                wrapper.style.height = "100%";
+                sixseven.style.height = "";
+                sixseven.style.maxHeight = "";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', resizeWrapper);
+        window.addEventListener('resize', resizeWrapper);
+    </script>
 </body>
 </html >
