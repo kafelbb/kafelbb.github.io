@@ -39,6 +39,7 @@ buttons.forEach(btn => {
 			buttons.forEach(b => b.classList.remove('selected'));
 			event.currentTarget.classList.add('selected');
 		}
+		resizeWrapper();
     });
 });
 

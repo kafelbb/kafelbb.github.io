@@ -351,6 +351,12 @@ a{
     grid-template-rows: repeat(1, 1fr);
     border-radius: 1rem;
 }
+.coding {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    border-radius: 1rem;
+}
 /*media requests*/
 @media (max-width: 1000px), (max-height: 950px) {
     .dark_gray_thing {
@@ -389,11 +395,22 @@ a{
         height: auto !important;
         overflow-y: auto !important;
     }
-
+    .composing{
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .mbtn{
+        padding: 1rem;
+    }
     body {
         display: block !important;
     }
-
+    .win2{
+        width: auto !important;
+    }
+    .window{
+        height: auto;
+    }
     .dark_gray_thing {
         position: relative !important;
         left: unset !important;
