@@ -1,5 +1,7 @@
 const divs= document.querySelectorAll('.design, .modeling, .coding, .composing, .texturing, .building, .arduino');
 const buttons = document.querySelectorAll('.btn');
+const imgs = document.querySelectorAll(".icon3");
+const snds = document.querySelectorAll(".mbtn");
 
 function resizeWrapper() {
 	const wrapper = document.querySelector('.wrapper2');
@@ -41,6 +43,19 @@ buttons.forEach(btn => {
 		}
 		resizeWrapper();
     });
+});
+
+imgs.forEach(img => {
+	console.log(img);
+	img.addEventListener("click", (event) => {
+		window.open(event.target.id, '_blank');
+	});
+});
+snds.forEach(img => {
+	console.log(img);
+	img.addEventListener("click", (event) => {
+		window.open(event.target.id, '_blank');
+	});
 });
 
 window.addEventListener('DOMContentLoaded', resizeWrapper);
