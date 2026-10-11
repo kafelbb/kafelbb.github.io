@@ -158,24 +158,23 @@ a{
     box-sizing: border-box;
     box-shadow: 0px 0px 16px rgba(0,0,0,0.25);
     cursor: pointer;
-    /* Центрируем текст внутри кнопки */
+
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Исходное распределение высоты (все равны) */
+
     flex: 1 1 auto;
-    /* Плавный твининг изменения высоты */
+
     transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .btns:hover .btn {
     flex: 0.5 1 auto;
 }
 
-/* 2. Но та конкретная кнопка, на которую навели, сильно увеличивается */
 .btns .btn:hover {
     flex: 0.75 1 auto;
 }
-/* Базовое состояние кнопок соцсетей */
+
 .linkbtn {
     background: #ffffff;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(200, 200, 200, 1) 100%);
@@ -191,25 +190,21 @@ a{
     align-items: center;
     justify-content: center;
     height: 5vh !important;
-    /* Убран !important, чтобы flex мог динамически изменяться */
     flex: 1 1 auto;
     transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Контейнер-родитель, который контролирует ширину элементов */
 .links {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    width: 100%; /* Растягиваем контейнер кнопок на всю ширину окна */
+    width: 100%;
 }
 
-    /* 1. Когда курсор внутри контейнера .links, ВСЕ кнопки сжимаются */
     .links:hover .linkbtn {
         flex: 0.5 1 auto;
     }
 
-    /* 2. Конкретная кнопка под курсором плавно расширяется по оси X */
     .links .linkbtn:hover {
         flex: 0.65 1 auto;
     }

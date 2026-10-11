@@ -158,20 +158,16 @@ a{
     box-sizing: border-box;
     box-shadow: 0px 0px 16px rgba(0,0,0,0.25);
     cursor: pointer;
-    /* Центрируем текст внутри кнопки */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Исходное распределение высоты (все равны) */
     flex: 1 1 auto;
-    /* Плавный твининг изменения высоты */
     transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .btns:hover .btn {
     flex: 0.5 1 auto;
 }
 
-/* 2. Но та конкретная кнопка, на которую навели, сильно увеличивается */
 .btns .btn:hover {
     flex: 0.75 1 auto;
 }
