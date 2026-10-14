@@ -273,10 +273,50 @@ a{
     }
 }
 @media (max-aspect-ratio: 13/10) {
+    html {
+        /* Принудительно разрешаем высоте подстраиваться под контент */
+        height: auto !important;
+        overflow-y: auto !important;
+    }
 
-    html, body {
-        width: 100%;
-        height: 100%;
+    body {
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        /* Выстраиваем элементы от верхнего края, убирая центрирование */
+        justify-content: flex-start !important;
+        align-items: center !important;
+        overflow-y: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Главная полупрозрачная подложка */
+    .darkthing {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100vh !important; /* Гарантирует покрытие всего экрана смартфона */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        /* Создаем аккуратные отступы: 3rem сверху экрана и 4rem снизу для запаса хода */
+        padding: 3rem 0 4rem 0 !important;
+        box-sizing: border-box !important;
+        /* ИСПРАВЛЕНИЕ: Срезаем невидимые вылеты повернутого фона-шахматки */
+        overflow: hidden !important;
+    }
+
+    /* ИСПРАВЛЕНИЕ: Ограничиваем высоту фона-подложки фактической высотой страницы */
+    .wrapper2 {
+        height: 100% !important; /* Вместо десктопных 200vh привязывается к высоте контента */
+        min-height: 100vh !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 
     .thing {
@@ -318,10 +358,12 @@ a{
     .links {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
+        height: 100%;
+        gap: 1.5rem;
     }
     .linkbtn {
-        flex: 1 1 auto;
-        height: 50px;
+        height: 100%;
         width: 100%;
         font-size: 1.25rem;
     }
