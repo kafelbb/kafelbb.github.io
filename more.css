@@ -294,3 +294,119 @@ a{
     }
 }
 
+@media (max-aspect-ratio: 13/10) {
+    html {
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+
+    body {
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        overflow-y: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .wrapper2 {
+        height: 100% !important;
+        min-height: 100vh !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .darkthing {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding: 3rem 0 3rem 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .thing {
+        width: calc(100% - 6rem) !important;
+        height: auto !important;
+        max-height: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 3rem !important;
+    }
+
+    .center {
+        flex-direction: column !important;
+        gap: 3rem !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .aboutwin {
+        width: 100%;
+        height: auto;
+        font-size: 1.35rem;
+        padding: 2rem;
+    }
+
+    .navbar {
+        width: 100%;
+        height: auto;
+        order: 2;
+        padding: 1.25rem;
+        font-size: 1.35rem;
+        padding: 2rem;
+    }
+
+    .black {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 2rem !important;
+        gap: 1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .btns {
+        width: 100%;
+        height: 100%;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        flex: 1 1 auto;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .btns:hover .btn {
+        flex: 0.6 1 auto !important;
+    }
+
+    .btns .btn:hover {
+        flex: 1.6 1 auto !important;
+    }
+
+    header {
+        font-size: 1.35rem;
+    }
+    a {
+        font-size: 1.25rem;
+    }
+    .header2 {
+        font-size: 1.35rem;
+    }
+}

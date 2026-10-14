@@ -272,3 +272,89 @@ a{
         width: auto;
     }
 }
+@media (max-aspect-ratio: 13/10) {
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .thing {
+        width: calc(100% - 6rem);
+        height: calc(100% - 6rem);
+        gap: 3rem;
+    }
+    .center {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    header {
+        font-size: 1.35rem;
+    }
+
+    .header2 {
+        font-size: 1.35rem;
+    }
+    .aboutwin {
+        width: 100%;
+        height: auto;
+        font-size: 1.35rem;
+        padding: 2rem;
+    }
+    .navbar {
+        width: 100%;
+        height: auto;
+        order: 2;
+        padding: 1.25rem;
+        font-size: 1.35rem;
+        padding: 2rem;
+    }
+    .btns {
+        width: 100%;
+        height: 100%;
+        gap: 1.5rem;
+    }
+    .links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .linkbtn {
+        flex: 1 1 auto;
+        height: 50px;
+        width: 100%;
+        font-size: 1.25rem;
+    }
+    .btn {
+        flex: 1 1 auto;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+
+    .black {
+        padding: 2rem;
+    }
+
+    .controls {
+        height: 30%;
+    }
+
+    img {
+        height: 100%;
+        max-height: 12vh;
+    }
+
+    .hint {
+        display: none;
+    }
+
+    a {
+        font-size: 1.25rem;
+    }
+
+    .infod {
+        height: 90%;
+        width: 50%;
+    }
+}
