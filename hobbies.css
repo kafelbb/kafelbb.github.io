@@ -85,8 +85,8 @@ header {
 }
 .aboutwin {
     display: flex;
-    background: #ff9661;
-    background: linear-gradient(180deg, rgba(255, 150, 97, 1) 0%, rgba(189, 69, 0, 1) 100%);
+    background: #cf4c19;
+    background: linear-gradient(0deg, rgba(207, 76, 25, 1) 0%, rgba(255, 146, 74, 1) 100%);
     border-radius: 1.5rem;
     position: relative;
     width: 100%;
