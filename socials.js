@@ -7,7 +7,8 @@
 
     'github' : 'https://github.com/kafelbb',
     'tiktok' :'https://www.tiktok.com/@rosinfluxx',
-    'youtube' : 'https://www.youtube.com/@kafelbb'
+    'youtube' : 'https://www.youtube.com/@kafelbb',
+    'soundcloud' : 'https://soundcloud.com/kafel-980076186'
   };
 
   document.addEventListener('click', (event) => {
